@@ -18,6 +18,7 @@
   
     <table class="table">
         <thead>
+            
             <tr>
                 <th scope="col">Buch-Nr.</th>
                 <th scope="col">Autor</th>
@@ -25,17 +26,19 @@
                 <th scope="col">Erscheinungsjahr</th>
                 <th scope="col">Seiten</th>
                 <th scope="col">Verlag</th>
+                <th scope="col"></th>
             </tr>
         </thead>
         <tbody>
-            <tr *ngFor="let buch of buchListe; let i = index">
-                <th scope="row">{{ i + 1 }}</th>
-                <td>{{ buch.autor }}</td>
-                <td>{{ buch.titel }}</td>
-                <td>{{ buch.jahr }}</td>
-                <td>{{ buch.seiten }}</td>
-                <td>{{ buch.verlag }}</td>
         
+            <tr *ngFor="let buch of buchListe; let i = index">
+                <th scope="row">{{ i + 6 }}</th>
+                <td>{{ buch.autor }}<i (click)="edit(i)"> e</i></td>
+                <td>{{ buch.titel }}<i (click)="edit(i)"> e</i></td>
+                <td>{{ buch.jahr }}<i (click)="edit(i)"> e</i></td>
+                <td>{{ buch.seiten }}<i (click)="edit(i)"> e</i></td>
+                <td>{{ buch.verlag }}<i (click)="edit(i)"> e</i></td>
+                <td style="color: red;font-weight: bold;" (click)="delete(i)">X</td>
               </tr>
           </tbody>
           
@@ -50,23 +53,23 @@
     <form class="mx-4">
         <div class="form-group">
             <label for="InputAutor">Autor</label>
-            <input type="text" class="form-control" id="InputAutor" [(ngModel)]="autor" placeholder="..." required>
+            <input type="text" class="form-control" id="InputAutor" [(ngModel)]="autor" name="autor" placeholder="..." required>
         </div>
         <div class="form-group">
             <label for="InputTitel">Titel</label>
-            <input type="text" class="form-control" id="InputTitel" [(ngModel)]="titel" placeholder="..." required>
+            <input type="text" class="form-control" id="InputTitel" [(ngModel)]="titel" name="title" placeholder="..." required>
         </div>
         <div class="form-group">
             <label for="InputJahr">Erscheinungsjahr</label>
-            <input type="text" class="form-control" id="InputJahr" [(ngModel)]="jahr" placeholder="..." required>
+            <input type="text" class="form-control" id="InputJahr" [(ngModel)]="jahr" name="jahr" placeholder="..." required>
         </div>
         <div class="form-group">
             <label for="InputSeiten">Seiten</label>
-            <input type="number" class="form-control" id="InputSeiten" [(ngModel)]="seiten" placeholder="..." required>
+            <input type="number" class="form-control" id="InputSeiten" [(ngModel)]="seiten" name="seiten" placeholder="..." required>
         </div>
         <div class="form-group">
             <label for="InputVerlag">Verlag</label>
-            <input type="text" class="form-control" id="InputVerlag" [(ngModel)]="verlag" placeholder="..." required>
+            <input type="text" class="form-control" id="InputVerlag" [(ngModel)]="verlag" name="verlag" placeholder="..." required>
         </div>
         <div class="text-center">
         <button type="button" class="btn btn-primary mt-4 " id="absenden" (click)="speichern()">Speichern</button>
