@@ -1,71 +1,78 @@
 import { Component, ViewChild } from '@angular/core';
-import { CommonModule } from '@angular/common';
-import { FormBuilder, FormGroup, FormsModule, Validators } from '@angular/forms';
-import { HttpBackend, HttpClient } from '@angular/common/http';
-import { BuchempfehlungenService } from '../buchempfehlungen.service';
+import { CommonModule, DatePipe } from '@angular/common';
+import { FormControl, FormGroup, FormsModule, ReactiveFormsModule, Validators } from '@angular/forms';
+import { HttpBackend, HttpClient, HttpClientModule } from '@angular/common/http';
+
 
 
 
 @Component({
   selector: 'app-buchempfehlungen',
   standalone: true,
-  imports: [CommonModule, FormsModule],
+  imports: [CommonModule, FormsModule, ReactiveFormsModule, HttpClientModule],
   templateUrl: './buchempfehlungen.component.html',
   styleUrl: './buchempfehlungen.component.css'
 })
 export class BuchempfehlungenComponent {
 
 
-  buchListe: any[] = [];
-  autor : string;
-  titel : string;
-  jahr : string;
-  seiten : number;
-  verlag : string;
 
-  constructor(private service: BuchempfehlungenService){
+bookForm = new FormGroup({
+  autor: new FormControl('', [Validators.required]),
+  titel: new FormControl('', Validators.required),
+  jahr: new FormControl('', [Validators.required]),
+  seiten: new FormControl('', Validators.required),
+  verlag: new FormControl('', [Validators.required]),
+})
+  buchListe: any;
 
-  }
+addBook(){
 
-  ngOnInit(){
-    this.service.getDefaultData().subscribe((data:any)=>{
-      this.buchListe = data;
-    }); 
-  }
-
-  speichern() {
-    console.log('Autor:', this.autor);
-    if (this.autor && this.titel && this.jahr && this.seiten && this.verlag){    
-    const buchData = {
-      autor: this.autor,
-      titel: this.titel,
-      jahr: this.jahr,
-      seiten: this.seiten,
-      verlag: this.verlag
+  if(this.bookForm.valid){
+    const newBook = {
+      autor: this.bookForm.get('autor')?.value,
+      titel: this.bookForm.get('titel')?.value,
+      jahr: this.bookForm.get('jahr')?.value,
+      seiten: this.bookForm.get('seiten')?.value,
+      verlag: this.bookForm.get('verlag')?.value
     };
-    this.buchListe.push(buchData);
-
-    this.autor = '';
-    this.titel = '';
-    this.jahr = '';
-    this.seiten = 0;
-    this.verlag = '';
-  }else{
-    alert('Please fill all fields')
-  }
+    this.buchListe.push(newBook);
   }
 
-edit(index: number){
-  const buch = this.buchListe[index];
+  this.saveTripListToLocalStorage;
 
 }
 
-delete(index: number){
-  if(confirm('Sind Sie sicher, dass Sie diesen Eintrag löschen möchten?')){
-   this.buchListe = this.buchListe.filter((v,i)=> i !== index)
+
+  constructor(private http: HttpClient){
+
   }
+
+  private url =
+  'https://my-json-server.typicode.com/Convi57/Webanwendungen/trips';
+
+  getPosts() {
+    return this.http.get(this.url);
+  }
+
+  getDataFromLocalStorage(){
+    return JSON.parse(localStorage.getItem('buchListe')!);
+  }
+
+  saveTripListToLocalStorage() {
+    localStorage.setItem('buchListe', JSON.stringify(this.buchListe));
+  }
+
+ initBookList(){
+  this.getPosts().subscribe((response) =>{
+    this.buchListe = response;
+    this.saveTripListToLocalStorage();
+  });
+ }
+
 }
-}
+
+
 
 
 
