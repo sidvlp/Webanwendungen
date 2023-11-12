@@ -24,7 +24,21 @@ bookForm = new FormGroup({
   seiten: new FormControl('', Validators.required),
   verlag: new FormControl('', [Validators.required]),
 })
+
+editForm = new FormGroup({
+  autor: new FormControl('', [Validators.required]),
+  titel: new FormControl('', Validators.required),
+  jahr: new FormControl('', [Validators.required]),
+  seiten: new FormControl('', Validators.required),
+  verlag: new FormControl('', [Validators.required]),
+});
+editIndex: number;
   buchListe: any;
+
+ 
+
+
+
 
 addBook(){
 
@@ -39,7 +53,7 @@ addBook(){
     this.buchListe.push(newBook);
   }
 
-  this.saveTripListToLocalStorage;
+  this.saveBookListToLocalStorage();
 
 }
 
@@ -48,27 +62,58 @@ addBook(){
 
   }
 
-  private url =
-  ' ';
+  ngOnInit(){
+    this.buchListe = this.getDataFromLocalStorage();
+    if(!this.buchListe){
+      this.initBookList();
+    }
+  }
 
-  getPosts() {
+  private url =
+  'https://my-json-server.typicode.com/sidvlp/Webanwendungen/books';
+
+  getData() {
     return this.http.get(this.url);
+  }
+
+  deleteBook(index: number) {
+    if(confirm('Mächten Sie diesen Eintrag wirklich löschen?')){
+      this.buchListe.splice(index, 1);
+      this.saveBookListToLocalStorage();
+    }
+  
+  }
+
+  editBook(index: number) {
+   
+  }
+
+  saveChanges() {
+    
   }
 
   getDataFromLocalStorage(){
     return JSON.parse(localStorage.getItem('buchListe')!);
   }
 
-  saveTripListToLocalStorage() {
+  saveBookListToLocalStorage() {
     localStorage.setItem('buchListe', JSON.stringify(this.buchListe));
   }
 
  initBookList(){
-  this.getPosts().subscribe((response) =>{
+  this.getData().subscribe((response) =>{
     this.buchListe = response;
-    this.saveTripListToLocalStorage();
+    this.saveBookListToLocalStorage();
   });
  }
+
+clearData(){
+  if (confirm('Möchten Sie wirklich alle Local Storage-Daten zurücksetzen?')) {
+    localStorage.removeItem('buchListe');
+    this.initBookList();
+  }
+}
+
 
 }
 
