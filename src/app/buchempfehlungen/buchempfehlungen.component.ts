@@ -49,7 +49,7 @@ addBook(){
   }
 
   private url =
-  'https://my-json-server.typicode.com/sidvlp/Webanwendungen/data ';
+  ' ';
 
   getPosts() {
     return this.http.get(this.url);
