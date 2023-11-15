@@ -1,7 +1,9 @@
 import { Component, ViewChild } from '@angular/core';
 import { CommonModule, DatePipe } from '@angular/common';
 import { FormControl, FormGroup, FormsModule, ReactiveFormsModule, Validators } from '@angular/forms';
-import { HttpBackend, HttpClient, HttpClientModule } from '@angular/common/http';
+import { HttpClient, HttpClientModule } from '@angular/common/http';
+import { MatDialog } from '@angular/material/dialog';
+import { EditDialogComponent } from '../edit-dialog/edit-dialog.component';
 
 
 
@@ -58,7 +60,7 @@ addBook(){
 }
 
 
-  constructor(private http: HttpClient){
+  constructor(private http: HttpClient, public dialog: MatDialog){
 
   }
 
@@ -85,7 +87,18 @@ addBook(){
   }
 
   editBook(index: number) {
-   
+    const dialogRef = this.dialog.open(EditDialogComponent, {
+      data: this.buchListe[index],
+    });
+  
+    dialogRef.afterClosed().subscribe((result) => {
+      if (result) {
+      
+        this.buchListe[index] = result;
+  
+        this.saveBookListToLocalStorage();
+      }
+    });
   }
 
   saveChanges() {
@@ -108,7 +121,7 @@ addBook(){
  }
 
 clearData(){
-  if (confirm('Möchten Sie wirklich alle Local Storage-Daten zurücksetzen?')) {
+  if (confirm('Möchten Sie wirklich die Tabelle zurücksetzen?')) {
     localStorage.removeItem('buchListe');
     this.initBookList();
   }
