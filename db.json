@@ -4,7 +4,7 @@
       "titel": "Es",
       "autor": "Stephen King",
       "jahr": "14.August 2017",
-      "seiten": "1536",
+      "seiten": 1536,
       "verlag": "Heyne Verlag"
   
     },
@@ -12,28 +12,28 @@
       "titel": "Der Klient",
       "autor": "John Grisham",
       "jahr": "1.August 1995",
-      "seiten": "560",
+      "seiten": 560,
       "reiseende": "Heyne Verlag"
     },
     {
       "titel": "Alle Farben meines Lebens",
       "autor": "Cecelia Ahern",
       "jahr": "27.Oktober 2022",
-      "seiten": "368",
+      "seiten": 368,
       "reiseende": "Piper"
     },
     {
       "titel": "Harry Potter und der Gefangene von Askaban",
       "autor": "J.K. Rowling",
       "jahr": "20.Oktober 2023",
-      "seiten": "480",
+      "seiten": 480,
       "verlag": "Carlsen"
     },
     {
       "titel": "Die Einladung",
       "autor": "Sebastian Fitzek",
       "jahr": "25.Oktober 2023",
-      "seiten": "384",
+      "seiten": 384,
       "verlag": "Droemer HC"
     }
   ],
