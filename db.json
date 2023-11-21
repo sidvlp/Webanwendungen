@@ -1,6 +1,7 @@
 {
   "books":[
     {
+      "id": 1,
        "autor": "Stephen King",
        "titel": "Es",
        "jahr": "14.August 2017",
@@ -8,6 +9,7 @@
        "verlag": "Heyne Verlag"
      },
      {
+      "id": 2,
        "autor": "John Grisham",
        "titel": "Der Klient",
        "jahr": "1.August 1995",
@@ -15,6 +17,7 @@
        "verlag": "Heyne Verlag"
      },
      {
+      "id": 3,
          "autor": "Cecelia Ahern",
          "titel": "Alle Farben meines Lebens",
          "jahr": "27.Oktober 2022",
@@ -22,6 +25,7 @@
          "verlag": "Piper"
        },
        {
+        "id": 4,
          "autor": "J.K. Rowling",
          "titel": "Harry Potter und der Gefangene von Askaban",
          "jahr": "20.Oktober 2023",
@@ -29,6 +33,7 @@
          "verlag": "Carlsen"
        },
        {
+        "id": 5,
          "autor": "Sebastian Fitzek",
          "titel": "Die Einladung",
          "jahr": "25.Oktober 2023",
