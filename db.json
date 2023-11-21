@@ -3,10 +3,10 @@
     {
       "id": "1",
       "titel": "Es",
-      "autor": "Stephen King"
+      "autor": "Stephen King",
       "jahr": "14.08.2017",
       "seiten": "1536",
-      "verlag": "Heyne Verlag",
+      "verlag": "Heyne Verlag"
     },
     {
       "id": "2",
@@ -22,7 +22,7 @@
       "autor": "Cecelia Ahern",
       "jahr": "27.10.2022",
       "seiten": "368",
-      "verlag": "Piper",
+      "verlag": "Piper"
     },
     {
      "id": "4",
@@ -30,7 +30,7 @@
       "autor": "J.K. Rowling",
       "jahr": "20.10.2023",
       "seiten": "480",
-      "verlag": "Carlsen",
+      "verlag": "Carlsen"
     },
     {
      "id": "5",
@@ -38,8 +38,8 @@
       "autor": "Sebastian Fitzek",
       "jahr": "25.10.2023",
       "seiten": "384",
-      "verlag": "Droemer HC",
-    },
+      "verlag": "Droemer HC"
+    }
   ],
   "profile": {
     "name": "typicode"
