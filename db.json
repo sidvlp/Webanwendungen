@@ -1,0 +1,47 @@
+{
+  "books": [
+    {
+      "id": "1",
+      "titel": "Es",
+      "autor": "Stephen King"
+      "jahr": "14.08.2017",
+      "seiten": "1536",
+      "verlag": "Heyne Verlag",
+    },
+    {
+      "id": "2",
+      "titel": "Der Klient",
+      "autor": "John Grisham",
+      "jahr": "01.08.1995",
+      "seiten": "560",
+      "verlag": "Heyne Verlag"
+    },
+    {
+      "id": "3",
+      "titel": "Alle Farben meines Lebens",
+      "autor": "Cecelia Ahern",
+      "jahr": "27.10.2022",
+      "seiten": "368",
+      "verlag": "Piper",
+    },
+    {
+     "id": "4",
+      "titel": "Harry Potter und der gefangene von Askaban",
+      "autor": "J.K. Rowling",
+      "jahr": "20.10.2023",SS
+      "seiten": "480",
+      "verlag": "Carlsen",
+    },
+    {
+     "id": "5",
+      "titel": "Die Einladung",
+      "autor": "Sebastian Fitzek",
+      "jahr": "25.10.2023",
+      "seiten": "384",
+      "verlag": "Droemer HC",
+    },
+  ],
+  "profile": {
+    "name": "typicode"
+  }
+}
