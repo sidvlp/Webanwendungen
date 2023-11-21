@@ -1,44 +1,58 @@
 {
-  "books": [
+  "trips": [
     {
-      "id": "1",
-      "titel": "Es",
-      "autor": "Stephen King",
-      "jahr": "14.08.2017",
-      "seiten": 1536,
-      "verlag": "Heyne Verlag"
+      "kuerzel": "USLA",
+      "reisende": 3,
+      "reiseziel": "Los Angeles (USA)",
+      "reiseantritt": "2023/08/27",
+      "reiseende": "2023/09/05",
+      "gesamttage": 9,
+      "gesamtpreis": 3250
     },
     {
-      "id": "2",
-      "titel": "Der Klient",
-      "autor": "John Grisham",
-      "jahr": "01.08.1995",
-      "seiten": 560,
-      "verlag": "Heyne Verlag"
+      "kuerzel": "ITPA",
+      "reisende": 2,
+      "reiseziel": "Parma (Italien)",
+      "reiseantritt": "2023/05/21",
+      "reiseende": "2023/05/30",
+      "gesamttage": 8,
+      "gesamtpreis": 1570
     },
     {
-      "id": "3",
-      "titel": "Alle Farben meines Lebens",
-      "autor": "Cecelia Ahern",
-      "jahr": "27.10.2022",
-      "seiten": 368,
-      "verlag": "Piper"
+      "kuerzel": "CHPE",
+      "reisende": 2,
+      "reiseziel": "Peking (China)",
+      "reiseantritt": "2023/06/10",
+      "reiseende": "2023/06/24",
+      "gesamttage": 13,
+      "gesamtpreis": 2455
     },
     {
-     "id": "4",
-      "titel": "Harry Potter und der gefangene von Askaban",
-      "autor": "J.K. Rowling",
-      "jahr": "20.10.2023",
-      "seiten": 480,
-      "verlag": "Carlsen"
+      "kuerzel": "SAKP",
+      "reisende": 1,
+      "reiseziel": "Kapstadt (Südafrika)",
+      "reiseantritt": "2023/06/20",
+      "reiseende": "2023/07/02",
+      "gesamttage": 14,
+      "gesamtpreis": 2275
     },
     {
-     "id": "5",
-      "titel": "Die Einladung",
-      "autor": "Sebastian Fitzek",
-      "jahr": "25.10.2023",
-      "seiten": 38",
-      "verlag": "Droemer HC"
+      "kuerzel": "BRRI",
+      "reisende": 3,
+      "reiseziel": "Rio de Janeiro (Brasilien)",
+      "reiseantritt": "2023/07/29",
+      "reiseende": "2023/08/11",
+      "gesamttage": 12,
+      "gesamtpreis": 4150
+    },
+    {
+      "kuerzel": "CR13",
+      "reisende": 2,
+      "reiseziel": "Kreuzfahrt 'Majesty'",
+      "reiseantritt": "2023/05/26",
+      "reiseende": "2023/06/02",
+      "gesamttage": 5,
+      "gesamtpreis": 1200
     }
   ],
   "profile": {
